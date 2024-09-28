@@ -41,6 +41,7 @@ int main(){
     s->top = 0;
 
     
+    
     if(isEmpty(s)){
     printf("The Stack is Empty\n");
 }
@@ -59,3 +60,4 @@ return 0;
 }
 
 
+// if the Expression is  given in one call
