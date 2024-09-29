@@ -20,23 +20,33 @@ void push(char x, struct stack *s) {
 
 char pop(struct stack *s) {
     if (s->top == -1) {
-        printf("Stack is empty\n");
+        printf("Stack is empty and Unbalanced Statement\n");
+
         return '\0';  // return null character if stack is empty
     } else {
         char popped_element = s->arr[s->top];
         s->top--;
         return popped_element;
     }
+
+    return 0;
 }
 
 void check(const char *expression, struct stack *s) {
     for (int i = 0; expression[i] != '\0'; i++) {
         if (expression[i] == '(') {
             push(expression[i], s);
-        } else if (expression[i] == ')') {
+        } 
+        
+        
+        else if (expression[i] == ')') {
+
             char element_popped = pop(s);
+
+            // here we should match whether the popping element is the right match for the paranthesis
             printf("Popped element: %c\n", element_popped);
         }
+        
     }
 }
 
